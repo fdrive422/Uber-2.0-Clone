@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { selectTravelTimeInformation } from '../slices/navSlice';
 
-
 const data = [
 	{
 		id: "Uber-X-123",
@@ -28,6 +27,9 @@ const data = [
 	},
 ];
 
+// adjust if SURGE pricing goes up
+const SURGE_CHARGE_RATE = 1.5;
+
 const RideOptionsCard = () => {
 	const navigation = useNavigation()
 	const [selected, setSelected] = useState(null);
@@ -42,9 +44,8 @@ const RideOptionsCard = () => {
 				>
 					<Icon name="chevron-left" type="font-awesome" />
 				</TouchableOpacity>
-				<Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance.text}</Text>
+				<Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance?.text}</Text>
 			</View>
-
 			<FlatList data={data} keyExtractor={(item) => item.id}
 				renderItem={({ item: { id, title, multiplier, image }, item }) => (
 					<TouchableOpacity
@@ -60,14 +61,20 @@ const RideOptionsCard = () => {
 						/>
 						<View style={tw`-ml-6`}>
 							<Text style={tw`text-xl font-semibold`}>{title}</Text>
-							<Text>Travel time...</Text>
+							<Text>{travelTimeInformation?.duration?.text} Travel Time</Text>
 						</View>
-						<Text style={tw`text-xl`}>$99</Text>
+						<Text style={tw`text-xl`}>
+							{new Intl.NumberFormat('en-us', {
+								style: 'currency',
+								currency: 'USD',
+							}).format(
+								(travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier) / 100
+							)}
+						</Text>
 					</TouchableOpacity>
 				)}
 			/>
-
-			<View>
+			<View style={tw`mt-auto border-t border-gray-200`}>
 				<TouchableOpacity disabled={!selected} style={tw`bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}>
 					<Text style={tw`text-center text-white text-xl`}>Choose {selected?.title}</Text>
 				</TouchableOpacity>
