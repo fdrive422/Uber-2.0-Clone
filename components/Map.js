@@ -42,7 +42,8 @@ function Map() {
 		<MapView
 			ref={mapRef}
 			style={tw`flex-1`}
-			mapType='mutedStandard'
+			// mapType='mutedStandard'
+			mapType='standard'
 			initialRegion={{
 				latitude: origin.location.lat,
 				longitude: origin.location.lng,
