@@ -10,9 +10,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-navigation/native": "^6.0.11",
-    "@react-navigation/native-stack": "^6.7.0",
-    "@reduxjs/toolkit": "^1.8.3",
+    "@react-navigation/native": "^6.0.12",
+    "@react-navigation/native-stack": "^6.8.0",
+    "@reduxjs/toolkit": "^1.8.5",
     "@rneui/base": "^4.0.0-rc.6",
     "@rneui/themed": "^4.0.0-rc.6",
     "expo": "~45.0.0",
