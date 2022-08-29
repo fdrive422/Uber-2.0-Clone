@@ -43,7 +43,7 @@ function Map() {
 			ref={mapRef}
 			style={tw`flex-1`}
 			// mapType='mutedStandard'
-			mapType='standard'
+			mapType='standard'  // options: satellite, hybrid, standard, mutedStandard
 			initialRegion={{
 				latitude: origin.location.lat,
 				longitude: origin.location.lng,
