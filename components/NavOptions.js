@@ -17,7 +17,7 @@ const data = [
 		id: "456",
 		title: "Order food",
 		image: "https://links.papareact.com/28w",
-		screen: "EatsScreen", //Change in future
+		screen: "EatsScreen", //build not complete - add in future
 	},
 ];
 
