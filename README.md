@@ -2,7 +2,7 @@
 
 ### Built with JavaScript React Native, Redux, Expo
 
-### APIs employed: Google Places, Driections, Distacne Matrix
+### APIs employed: Google Places, Directions, Distance Matrix
 
 #### Home Screen
 
