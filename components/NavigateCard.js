@@ -40,7 +40,7 @@ const NavigateCard = () => {
 							key: GOOGLE_MAPS_APIKEY,
 							language: "en",
 						}}
-						nearbyPlacesAPI="GooglePlaceSeach"
+						nearbyPlacesAPI="GooglePlaceSearch"
 						debounce={400}
 					/>
 				</View>
@@ -78,6 +78,6 @@ const toInputBoxStyles = StyleSheet.create({
 	},
 	textInputContainer: {
 		paddingHorizontal: 20,
-		paddingBotton: 0,
+		paddingBottom: 0,
 	},
 });
